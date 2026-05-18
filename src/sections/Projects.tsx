@@ -39,10 +39,6 @@ export function Projects() {
                     src={project.img} 
                     alt={project.title} 
                     className="max-w-full max-h-full object-contain rounded-xl shadow-2xl group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] relative z-20 m-auto"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = `https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop`;
-                    }}
                   />
                 </div>
                 
