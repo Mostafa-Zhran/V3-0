@@ -159,7 +159,7 @@ export const PORTFOLIO_DATA = {
         "RESTFull API",
         "Swager OpenAPI"
       ],
-      img: "Images/projects/mos3ef.png",
+      img: "/images/projects/mos3ef.png",
       link: "https://mos3ef-website.vercel.app/",
       github: "https://github.com/Mostafa-Zhran/Mos3ef-Backend"
     },
@@ -175,7 +175,7 @@ export const PORTFOLIO_DATA = {
         "Search Engine",
         "REST API",
       ],
-      img: "Images/projects/QueryFlow.png",
+      img: "/images/projects/QueryFlow.png",
       link: "https://q-flow-three.vercel.app/",
     },
     {
@@ -191,21 +191,21 @@ export const PORTFOLIO_DATA = {
         "RESTFull API",
         "Swager OpenAPI"
       ],
-      img: "Images/projects/daleel.png",
+      img: "/images/projects/daleel.png",
       link: "https://daleel2030.vercel.app/",
     },
     {
       title: "Personal Portfolio V3.0",
       desc: "Upgraded portfolio with refined design, smoother navigation and enhanced project showcases — highlights growth and new skills.",
       tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "HTML5", "CSS3", "Vite"],
-      img: "Images/projects/V3.png",
+      img: "/images/projects/V3.png",
       link: "#",
     },
     {
       title: "Sales Management Desktop App",
       desc: "All-in-one desktop solution to track customers, manage inventory, and generate reports with ease.",
       tags: ["C#", "WinForms", ".NET Core", "SQL Server", "Dapper"],
-      img: "Images/projects/Sales App.png",
+      img: "/images/projects/Sales App.png",
       link: "https://github.com/Mostafa-Zhran/Sales-Management-System-Desktop-app.git",
     },
     {
@@ -221,7 +221,7 @@ export const PORTFOLIO_DATA = {
         "Data Analysis",
         "4 ML Algorithms"
       ],
-      img: "Images/projects/Cancer detection.png",
+      img: "/images/projects/Cancer detection.png",
       link: "#",
     }
   ],
