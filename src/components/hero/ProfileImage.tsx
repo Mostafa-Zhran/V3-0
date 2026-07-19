@@ -1,9 +1,23 @@
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import { useMouseParallax } from "@/hooks/useMouseParallax";
 import { FloatingParticles } from "./FloatingParticles";
 
 export function ProfileImage() {
   const { x, y } = useMouseParallax({ intensity: 15 });
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 1023px)");
+    setIsMobile(mediaQuery.matches);
+
+    const handleResize = (e: MediaQueryListEvent) => {
+      setIsMobile(e.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleResize);
+    return () => mediaQuery.removeEventListener("change", handleResize);
+  }, []);
 
   return (
     <motion.div
@@ -17,10 +31,14 @@ export function ProfileImage() {
           background:
             "conic-gradient(from 0deg, #3b82f6, #8b5cf6, #14b8a6, #ec4899, #3b82f6)",
         }}
-        animate={{
-          rotate: [0, 360],
-          scale: [1, 1.05, 1],
-        }}
+        animate={
+          isMobile
+            ? undefined
+            : {
+                rotate: [0, 360],
+                scale: [1, 1.05, 1],
+              }
+        }
         transition={{
           rotate: { duration: 12, repeat: Infinity, ease: "linear" },
           scale: { duration: 6, repeat: Infinity, ease: "easeInOut" },
@@ -37,7 +55,7 @@ export function ProfileImage() {
           WebkitMaskImage: "radial-gradient(transparent 65%, black 66%, black 70%, transparent 71%)",
           willChange: "transform",
         }}
-        animate={{ rotate: [0, 360] }}
+        animate={isMobile ? undefined : { rotate: [0, 360] }}
         transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
       />
 
@@ -51,14 +69,14 @@ export function ProfileImage() {
           WebkitMaskImage: "radial-gradient(transparent 68%, black 69%, black 72%, transparent 73%)",
           willChange: "transform",
         }}
-        animate={{ rotate: [360, 0] }}
+        animate={isMobile ? undefined : { rotate: [360, 0] }}
         transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
       />
 
       {/* Floating animation wrapper */}
       <motion.div
         className="relative"
-        animate={{ y: [0, -12, 0] }}
+        animate={isMobile ? undefined : { y: [0, -12, 0] }}
         transition={{
           duration: 6,
           repeat: Infinity,
@@ -105,7 +123,7 @@ export function ProfileImage() {
             boxShadow:
               "0 0 60px rgba(59,130,246,0.08), 0 0 120px rgba(139,92,246,0.05)",
           }}
-          animate={{
+          animate={isMobile ? undefined : {
             opacity: [0.5, 1, 0.5],
           }}
           transition={{
@@ -117,7 +135,7 @@ export function ProfileImage() {
       </motion.div>
 
       {/* Floating particles */}
-      <FloatingParticles />
+      <FloatingParticles isMobile={isMobile} />
     </motion.div>
   );
 }

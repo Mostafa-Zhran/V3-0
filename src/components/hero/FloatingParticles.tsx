@@ -19,7 +19,9 @@ const COLORS = [
   "bg-saas-purple/30",
 ];
 
-export function FloatingParticles() {
+export function FloatingParticles({ isMobile }: { isMobile?: boolean }) {
+  if (isMobile) return null;
+
   const particles: Particle[] = useMemo(() => {
     return Array.from({ length: 18 }, (_, i) => ({
       id: i,
