@@ -126,3 +126,53 @@ html {
   transform: translate(-50%, -50%);
   border-radius: 50%;
 }
+
+/* Hero gradient border with animated conic gradient */
+.hero-gradient-border {
+  background: conic-gradient(
+    from var(--gradient-angle, 0deg),
+    #3b82f6,
+    #8b5cf6,
+    #14b8a6,
+    #ec4899,
+    #3b82f6
+  );
+  animation: hero-border-rotate 4s linear infinite;
+}
+
+@keyframes hero-border-rotate {
+  to {
+    --gradient-angle: 360deg;
+  }
+}
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* Radial gradient spotlight */
+.bg-radial-gradient {
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.08) 0%,
+    rgba(59, 130, 246, 0.04) 30%,
+    transparent 70%
+  );
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-gradient-border {
+    animation: none;
+  }
+  
+  .animate-float,
+  .animate-orbit,
+  .animate-glow-pulse,
+  .animate-gradient-rotate {
+    animation: none !important;
+  }
+}
+
