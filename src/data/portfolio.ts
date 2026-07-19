@@ -68,8 +68,8 @@ export const PORTFOLIO_DATA = {
     },
     {
       icon: Star,
-      title: "ICPC Participant",
-      desc: "Participated in ICPC regional competitions, applying advanced algorithmic skills under pressure."
+      title: "ECPC Participant",
+      desc: "Preparing to participate in ECPC (Egyptian Collegiate Programming Contest) regional competitions, applying advanced algorithmic skills under pressure."
     },
     {
       icon: Medal,

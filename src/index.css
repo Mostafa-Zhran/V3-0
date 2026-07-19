@@ -33,6 +33,12 @@
     --ring: 0 0% 3.9%;
 
     --radius: 0.75rem;
+
+    /* Theme accent colors in space-separated RGB format for Tailwind opacity modifiers */
+    --accent-blue: 59 130 246;
+    --accent-purple: 139 92 246;
+    --accent-teal: 20 184 166;
+    --accent-pink: 236 72 153;
   }
 
   .dark {
@@ -131,11 +137,11 @@ html {
 .hero-gradient-border {
   background: conic-gradient(
     from var(--gradient-angle, 0deg),
-    #3b82f6,
-    #8b5cf6,
-    #14b8a6,
-    #ec4899,
-    #3b82f6
+    rgb(var(--accent-blue)),
+    rgb(var(--accent-purple)),
+    rgb(var(--accent-teal)),
+    rgb(var(--accent-pink)),
+    rgb(var(--accent-blue))
   );
   animation: hero-border-rotate 4s linear infinite;
 }

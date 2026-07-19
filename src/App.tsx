@@ -1,6 +1,8 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Background } from "@/components/ui/Background";
+import { ScrollIndicator } from "@/components/layout/ScrollIndicator";
+import { ThemeCustomizer } from "@/components/layout/ThemeCustomizer";
 
 import { Hero } from "@/sections/Hero";
 import { About } from "@/sections/About";
@@ -12,6 +14,8 @@ import { Contact } from "@/sections/Contact";
 function App() {
   return (
     <div className="min-h-screen font-sans selection:bg-saas-blue/30 selection:text-white">
+      <ScrollIndicator />
+      <ThemeCustomizer />
       <Background />
       <Navbar />
       

@@ -29,7 +29,7 @@ export function ProfileImage() {
         className="absolute w-[340px] h-[340px] sm:w-[400px] sm:h-[400px] lg:w-[480px] lg:h-[480px] rounded-full blur-[80px] opacity-40"
         style={{
           background:
-            "conic-gradient(from 0deg, #3b82f6, #8b5cf6, #14b8a6, #ec4899, #3b82f6)",
+            "conic-gradient(from 0deg, rgb(var(--accent-blue)), rgb(var(--accent-purple)), rgb(var(--accent-teal)), rgb(var(--accent-pink)), rgb(var(--accent-blue)))",
         }}
         animate={
           isMobile
@@ -50,7 +50,7 @@ export function ProfileImage() {
         className="absolute w-[310px] h-[310px] sm:w-[370px] sm:h-[370px] lg:w-[440px] lg:h-[440px] rounded-full"
         style={{
           background:
-            "conic-gradient(from 0deg, transparent, #3b82f6, transparent, #8b5cf6, transparent, #14b8a6, transparent)",
+            "conic-gradient(from 0deg, transparent, rgb(var(--accent-blue)), transparent, rgb(var(--accent-purple)), transparent, rgb(var(--accent-teal)), transparent)",
           maskImage: "radial-gradient(transparent 65%, black 66%, black 70%, transparent 71%)",
           WebkitMaskImage: "radial-gradient(transparent 65%, black 66%, black 70%, transparent 71%)",
           willChange: "transform",
@@ -64,7 +64,7 @@ export function ProfileImage() {
         className="absolute w-[290px] h-[290px] sm:w-[350px] sm:h-[350px] lg:w-[420px] lg:h-[420px] rounded-full opacity-50"
         style={{
           background:
-            "conic-gradient(from 180deg, transparent, #ec4899, transparent, #14b8a6, transparent)",
+            "conic-gradient(from 180deg, transparent, rgb(var(--accent-pink)), transparent, rgb(var(--accent-teal)), transparent)",
           maskImage: "radial-gradient(transparent 68%, black 69%, black 72%, transparent 73%)",
           WebkitMaskImage: "radial-gradient(transparent 68%, black 69%, black 72%, transparent 73%)",
           willChange: "transform",

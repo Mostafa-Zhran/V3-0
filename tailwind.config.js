@@ -48,10 +48,10 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         saas: {
-          blue: "#3b82f6",
-          purple: "#8b5cf6",
-          teal: "#14b8a6",
-          pink: "#ec4899",
+          blue: "rgb(var(--accent-blue) / <alpha-value>)",
+          purple: "rgb(var(--accent-purple) / <alpha-value>)",
+          teal: "rgb(var(--accent-teal) / <alpha-value>)",
+          pink: "rgb(var(--accent-pink) / <alpha-value>)",
           glow: "rgba(255, 255, 255, 0.05)"
         }
       },
