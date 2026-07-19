@@ -167,25 +167,22 @@ export function Hero() {
 
 function CTAButton() {
   return (
-    <motion.a
+    <a
       href="#contact"
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      className="relative p-[2px] rounded-full flex items-center justify-center group w-full sm:w-auto"
+      className="relative p-[2px] rounded-full flex items-center justify-center w-full sm:w-auto"
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-saas-blue via-saas-purple to-saas-teal rounded-full animate-[spin_3s_linear_infinite] opacity-70 group-hover:opacity-100 blur-[2px] transition-opacity duration-500" />
-      <div className="absolute inset-0 bg-gradient-to-r from-saas-blue via-saas-purple to-saas-teal rounded-full animate-[spin_3s_linear_infinite]" />
-      <div className="relative px-8 py-4 bg-black rounded-full flex items-center justify-center gap-2 w-full h-full transition-all duration-300 group-hover:bg-black/40 backdrop-blur-sm overflow-hidden">
-        <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-saas-blue via-saas-purple to-saas-teal rounded-full opacity-70 blur-[2px]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-saas-blue via-saas-purple to-saas-teal rounded-full" />
+      <div className="relative px-8 py-4 bg-black rounded-full flex items-center justify-center gap-2 w-full h-full backdrop-blur-sm overflow-hidden">
         <span className="text-white font-bold tracking-wide relative z-10">
           Start a project
         </span>
         <ArrowRight
           size={18}
-          className="text-white group-hover:translate-x-1 group-hover:-rotate-45 transition-all duration-300 relative z-10"
+          className="text-white relative z-10"
         />
       </div>
-    </motion.a>
+    </a>
   );
 }
 
