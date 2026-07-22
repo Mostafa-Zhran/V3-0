@@ -7,6 +7,7 @@ import { GlassInfoCards } from "@/components/hero/GlassInfoCards";
 import { HeroBackground } from "@/components/hero/HeroBackground";
 import { AvailableBadge } from "@/components/hero/AvailableBadge";
 import { HeroSocialLinks } from "@/components/hero/HeroSocialLinks";
+import { Typewriter } from "@/components/hero/Typewriter";
 
 export function Hero() {
   const { name, description } = PORTFOLIO_DATA.hero;
@@ -33,9 +34,7 @@ export function Hero() {
               className="text-5xl xl:text-7xl font-extrabold tracking-tighter text-white leading-[1.1] mt-8 mb-6"
             >
               Building{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-saas-blue via-saas-purple to-saas-teal">
-                digital products
-              </span>{" "}
+              <Typewriter words={["digital systems", "full-stack apps", "robust backends", "intelligent models"]} />{" "}
               that scale.
             </motion.h1>
 
@@ -91,9 +90,7 @@ export function Hero() {
             className="text-6xl font-extrabold tracking-tighter text-white leading-[1.1] mt-6 mb-6 max-w-2xl"
           >
             Building{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-saas-blue via-saas-purple to-saas-teal">
-              digital products
-            </span>{" "}
+            <Typewriter words={["digital systems", "full-stack apps", "robust backends", "intelligent models"]} />{" "}
             that scale.
           </motion.h1>
 
@@ -133,9 +130,7 @@ export function Hero() {
             className="text-4xl sm:text-5xl font-extrabold tracking-tighter text-white leading-[1.1] mt-6 mb-5"
           >
             Building{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-saas-blue via-saas-purple to-saas-teal">
-              digital products
-            </span>{" "}
+            <Typewriter words={["digital systems", "full-stack apps", "robust backends", "intelligent models"]} />{" "}
             that scale.
           </motion.h1>
 

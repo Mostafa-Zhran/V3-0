@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Search } from "lucide-react";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -9,7 +9,9 @@ export function Navbar() {
 
   const navLinks = [
     { name: "About", href: "#about" },
+    { name: "Journey", href: "#timeline" },
     { name: "Skills", href: "#skills" },
+    { name: "CP Stats", href: "#cp-stats" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ];
@@ -17,8 +19,8 @@ export function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
-      
-      const sections = navLinks.map(link => link.href.substring(1));
+
+      const sections = ["home", "about", "timeline", "skills", "cp-stats", "projects", "certifications", "contact"];
       let current = "home";
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -63,6 +65,16 @@ export function Navbar() {
               {link.name}
             </a>
           ))}
+
+          {/* Search Trigger */}
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent("open-command-palette"))}
+            className="ml-3 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/50 hover:text-white hover:bg-white/10 flex items-center gap-2 transition-all text-xs font-medium"
+            title="Search Commands (Ctrl+K)"
+          >
+            <Search size={13} />
+            <span className="text-[10px] opacity-60 font-mono tracking-tighter">⌘K</span>
+          </button>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -70,12 +82,21 @@ export function Navbar() {
           <a href="#home" className="text-xl font-bold tracking-tighter text-white">
             MZ
           </a>
-          <button
-            className="text-white/80 hover:text-white p-1"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => window.dispatchEvent(new CustomEvent("open-command-palette"))}
+              className="text-white/60 hover:text-white p-2 bg-white/5 rounded-full border border-white/5 flex items-center justify-center"
+              aria-label="Search"
+            >
+              <Search size={14} />
+            </button>
+            <button
+              className="text-white/80 hover:text-white p-1"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
       </div>
 

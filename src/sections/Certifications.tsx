@@ -42,9 +42,28 @@ export function Certifications() {
                   {cert.issuer}
                 </div>
                 
-                <p className="text-white/60 text-sm leading-relaxed mb-8">
+                <p className="text-white/60 text-sm leading-relaxed mb-6">
                   {cert.desc}
                 </p>
+
+                {/* Skill badges preview */}
+                {"skills" in cert && Array.isArray((cert as any).skills) && (
+                  <div className="flex flex-wrap gap-1.5 mb-8">
+                    {((cert as any).skills as string[]).slice(0, 4).map((skill, idx) => (
+                      <span
+                        key={idx}
+                        className="px-2.5 py-0.5 text-xs font-mono text-white/70 bg-white/[0.04] border border-white/10 rounded-md"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                    {((cert as any).skills as string[]).length > 4 && (
+                      <span className="px-2.5 py-0.5 text-xs font-mono text-saas-teal bg-saas-teal/10 border border-saas-teal/20 rounded-md font-medium">
+                        +{((cert as any).skills as string[]).length - 4} more
+                      </span>
+                    )}
+                  </div>
+                )}
               </div>
               
               <div className="inline-flex items-center gap-2 text-sm font-medium text-white/70 group-hover:text-saas-teal transition-all duration-300 mt-auto w-fit bg-white/[0.03] px-3 py-1.5 rounded-full border border-white/10 group-hover:border-saas-teal/50 group-hover:bg-saas-teal/10 overflow-hidden relative">
@@ -113,23 +132,32 @@ export function Certifications() {
                   </div>
 
                   {/* Description */}
-                  <p className="text-white/70 text-base leading-relaxed mb-8">
+                  <p className="text-white/70 text-base leading-relaxed mb-6">
                     {activeCert.desc}
                   </p>
 
                   {/* Skills tags */}
                   <div className="flex flex-wrap gap-2 mb-8">
-                    {activeCert.desc
-                      .match(/\b[A-Z][a-zA-Z.]+\b/g)
-                      ?.slice(0, 8)
-                      .map((tag, i) => (
-                        <span
-                          key={i}
-                          className="px-2.5 py-1 text-xs text-white/60 bg-white/5 border border-white/10 rounded-full"
-                        >
-                          {tag}
-                        </span>
-                      ))}
+                    {"skills" in activeCert && Array.isArray((activeCert as any).skills)
+                      ? ((activeCert as any).skills as string[]).map((skill, i) => (
+                          <span
+                            key={i}
+                            className="px-3 py-1 text-xs font-mono font-medium text-white/80 bg-white/5 border border-white/10 rounded-lg hover:border-saas-teal/40 hover:text-white transition-colors"
+                          >
+                            {skill}
+                          </span>
+                        ))
+                      : activeCert.desc
+                          .match(/\b[A-Z][a-zA-Z.]+\b/g)
+                          ?.slice(0, 8)
+                          .map((tag, i) => (
+                            <span
+                              key={i}
+                              className="px-2.5 py-1 text-xs text-white/60 bg-white/5 border border-white/10 rounded-full"
+                            >
+                              {tag}
+                            </span>
+                          ))}
                   </div>
 
                   {/* CTA */}

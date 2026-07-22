@@ -19,7 +19,7 @@ const SOCIAL_COLORS: Record<string, string> = {
   Codewars: "hover:text-red-500 hover:shadow-[0_0_20px_rgba(239,68,68,0.2)]",
 };
 
-export function HeroSocialLinks() {
+export function HeroSocialLinks() {2
   const socials = PORTFOLIO_DATA.socials;
 
   return (
