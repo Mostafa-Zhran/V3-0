@@ -117,6 +117,11 @@ export const PORTFOLIO_DATA = {
       icon: Medal,
       title: "Full Stack Certified",
       desc: "Completed comprehensive full-stack .NET training through Digital Egypt Pioneers initiative."
+    },
+    {
+      icon: Award,
+      title: "TIEC Innovation Ambassador",
+      desc: "Selected as one of the TIEC Innovation Ambassadors for TIEC–Patch 2026, representing innovation and technology leadership."
     }
   ],
 
@@ -230,6 +235,14 @@ export const PORTFOLIO_DATA = {
       org: "Daleel - Query Flow ",
       desc: "Designed, built, and deployed Production web applications . form public services to search engines",
       icon: Rocket,
+    },
+    {
+      category: "achievement" as const,
+      date: "Jul 2026 — Jul 2027",
+      title: "TIEC Innovation Ambassador",
+      org: "TIEC — Technology Innovation & Entrepreneurship Center",
+      desc: "Selected as one of the TIEC Innovation Ambassadors for TIEC–Patch 2026 — representing innovation and technology leadership for one year, bridging entrepreneurs, startups, and the tech ecosystem.",
+      icon: Award,
     },
   ],
 
